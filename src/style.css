@@ -1,0 +1,11 @@
+p {
+    color: green;
+    background-color: yellow;
+}
+
+div {
+    background-image: url("./images/main.png");  /*背景画像を設定*/
+    background-repeat: no-repeat;
+    width: 600px;
+    height: 400px;
+  }
