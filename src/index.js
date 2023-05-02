@@ -1,16 +1,25 @@
-    import  './style.css';  
-    import { greet1 } from './modules/foo';
-    import { greet2 } from './modules/bar';
-     
-    function component() {
-      const divElem = document.createElement('div');
-      const p1 = document.createElement('p');
-      p1.textContent = greet1();
-      divElem.appendChild(p1);
-      const p2 = document.createElement('p');
-      p2.textContent = greet2();
-      divElem.appendChild(p2);
-      return divElem;
-    }
-     
-    document.body.appendChild(component());
+import './style.css';
+import m from 'mithril';
+
+
+// Child component
+const ChildComponent = {
+  view: (vnode) => {
+    return m('p', `Hello, ${vnode.attrs.name}!`);
+  },
+};
+
+// Parent component
+const ParentComponent = {
+  view: () => {
+    return m('div', [
+      m('h1', 'Parent Component'),
+      m(ChildComponent, { name: 'Alice' }),
+      m(ChildComponent, { name: 'Bob' }),
+      m(ChildComponent, { name: 'Carol' }),
+    ]);
+  },
+};
+
+// Mount the parent component on the page
+m.mount(document.body, ParentComponent);

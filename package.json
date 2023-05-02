@@ -14,7 +14,8 @@
   "license": "ISC",
   "dependencies": {
     "fomantic-ui": "^2.9.2",
-    "fomantic-ui-css": "^2.9.2"
+    "fomantic-ui-css": "^2.9.2",
+    "mithril": "^2.2.2"
   },
   "devDependencies": {
     "@babel/core": "^7.21.5",
